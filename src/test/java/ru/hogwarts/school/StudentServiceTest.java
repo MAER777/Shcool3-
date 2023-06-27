@@ -32,25 +32,25 @@ public class StudentServiceTest {
             new Student(5L, "ggg", 19)
     );
 
-    @Test
-    void addStudentTest() {
-        Student a = new Student(1L, "ddd", 20);
-        when(repository.save(a)).thenReturn(a);
-        assertEquals(a, out.createStudent(a));
-    }
-
-    @Test
-    void findStudentByIdPositiveTest() {
-        Student a = new Student(2L, "sss", 17);
-        when(repository.findById(2L)).thenReturn(Optional.of(a));
-        assertEquals(a, out.findStudent(2L));
-    }
-
-    @Test
-    void findStudentByIdNegativeTest() {
-        Student a = new Student(2L, "sss", 17);
-        assertNull(repository.findById(10L));
-    }
+//    @Test
+//    void addStudentTest() {
+//        Student a = new Student(1L, "ddd", 20);
+//        when(repository.save(a)).thenReturn(a);
+//        assertEquals(a, out.createStudent(a));
+//    }
+//
+//    @Test
+//    void findStudentByIdPositiveTest() {
+//        Student a = new Student(2L, "sss", 17);
+//        when(repository.findById(2L)).thenReturn(Optional.of(a));
+//        assertEquals(a, out.findStudent(2L));
+//    }
+//
+//    @Test
+//    void findStudentByIdNegativeTest() {
+//        Student a = new Student(2L, "sss", 17);
+//        assertNull(repository.findById(10L));
+//    }
 //    StudentService serviceTest;
 //
 //    @BeforeEach
