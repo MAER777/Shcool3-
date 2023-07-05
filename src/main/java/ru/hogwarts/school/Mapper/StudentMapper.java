@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 import ru.hogwarts.school.Dto.StudentDoOut;
 import ru.hogwarts.school.Dto.StudentDotIn;
 import ru.hogwarts.school.Exception.FacultyNotFoundException;
-import ru.hogwarts.school.Model.Student;
+import ru.hogwarts.school.Entity.Student;
 import ru.hogwarts.school.Repositories.FacultyRepository;
 
 import java.util.Optional;

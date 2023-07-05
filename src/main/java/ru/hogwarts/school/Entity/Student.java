@@ -1,9 +1,7 @@
-package ru.hogwarts.school.Model;
+package ru.hogwarts.school.Entity;
 
 import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-import javax.annotation.processing.Generated;
 import java.util.Objects;
 
 @Entity
@@ -58,7 +56,7 @@ public class Student {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ru.hogwarts.school.Model.Student student = (ru.hogwarts.school.Model.Student) o;
+        ru.hogwarts.school.Entity.Student student = (ru.hogwarts.school.Entity.Student) o;
         return age == student.age && Objects.equals(id, student.id) && Objects.equals(name, student.name);
     }
 

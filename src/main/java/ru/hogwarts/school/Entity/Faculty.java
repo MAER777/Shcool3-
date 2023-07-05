@@ -1,4 +1,4 @@
-package ru.hogwarts.school.Model;
+package ru.hogwarts.school.Entity;
 
 
 import jakarta.persistence.*;
@@ -56,7 +56,7 @@ public class Faculty {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        ru.hogwarts.school.Model.Faculty faculty = (ru.hogwarts.school.Model.Faculty) o;
+        ru.hogwarts.school.Entity.Faculty faculty = (ru.hogwarts.school.Entity.Faculty) o;
         return Objects.equals(id, faculty.id) && Objects.equals(name, faculty.name) && Objects.equals(color, faculty.color);
     }
 

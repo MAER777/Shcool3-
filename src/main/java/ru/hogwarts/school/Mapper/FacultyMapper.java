@@ -3,8 +3,7 @@ package ru.hogwarts.school.Mapper;
 import org.springframework.stereotype.Component;
 import ru.hogwarts.school.Dto.FacultyDtoIn;
 import ru.hogwarts.school.Dto.FacultyDtoOut;
-import ru.hogwarts.school.Model.Faculty;
-import ru.hogwarts.school.Model.Student;
+import ru.hogwarts.school.Entity.Faculty;
 
 @Component
 public class FacultyMapper {

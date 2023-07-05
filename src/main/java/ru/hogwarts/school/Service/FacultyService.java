@@ -7,7 +7,7 @@ import ru.hogwarts.school.Dto.StudentDoOut;
 import ru.hogwarts.school.Exception.FacultyNotFoundException;
 import ru.hogwarts.school.Mapper.FacultyMapper;
 import ru.hogwarts.school.Mapper.StudentMapper;
-import ru.hogwarts.school.Model.Faculty;
+import ru.hogwarts.school.Entity.Faculty;
 import ru.hogwarts.school.Repositories.FacultyRepository;
 import ru.hogwarts.school.Repositories.StudentRepository;
 

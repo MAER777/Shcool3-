@@ -1,7 +1,5 @@
 package ru.hogwarts.school.Exception;
 
-import ru.hogwarts.school.Model.Student;
-
 public class StudentNotFoundException extends NotFoundException{
     private final long id;
 
