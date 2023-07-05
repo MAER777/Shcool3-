@@ -2,10 +2,13 @@ package ru.hogwarts.school.Controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import ru.hogwarts.school.Dto.StudentDoOut;
+import ru.hogwarts.school.Dto.StudentDotIn;
 import ru.hogwarts.school.Model.Student;
 import ru.hogwarts.school.Service.StudentService;
 
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("student")
@@ -17,45 +20,33 @@ public class StudentController {
         this.studentService = studentService;
     }
 
+    @PostMapping
+    public StudentDoOut createStudent (@RequestBody StudentDotIn studentDotIn) {
+        return  studentService.createStudent(studentDotIn);
+    }
+
+    @PutMapping("{id}")
+    public StudentDoOut editStudent (@PathVariable Long id, @RequestBody StudentDotIn studentDotIn) {
+        return  studentService.editStudent(id, studentDotIn);
+    }
+
     @GetMapping("{id}")
-    public ResponseEntity<Student> getStudentInfo (@PathVariable Long id) {
-        Student student = studentService.findStudent(id);
-        if (student == null) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(student);
+    public StudentDoOut getStudentInfo (@PathVariable Long id) {
+        return studentService.findStudent(id);
     }
 
     @GetMapping("/age/{age}")
-    public ResponseEntity<Collection<Student>> getAllStudentOfAge(@PathVariable Integer age) {
-        Collection<Student> studentCollection = studentService.getAllStudentOfAge(age);
-        if (studentCollection.size() == 0) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(studentCollection);
+    public List<StudentDoOut> getAllStudentOfAge(@PathVariable Integer age) {
+        return studentService.getAllStudentOfAge(age);
     }
 
     @GetMapping
-    public ResponseEntity<Collection<Student>> getAllStudent() {
-        return ResponseEntity.ok(studentService.getAllStudent());
-    }
-
-    @PostMapping
-    public Student createStudent (@RequestBody Student student) {
-        return studentService.createStudent(student);
-    }
-
-    @PutMapping
-    public ResponseEntity<Student> editStudent (@RequestBody Student student) {
-        Student student1 = studentService.editStudent(student);
-        if (student1 == null) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok(student1);
+    public List<StudentDoOut> getAllStudent() {
+        return studentService.getAllStudent();
     }
 
     @DeleteMapping("{id}")
-    public Student deleteStudent (@PathVariable Long id) {
+    public StudentDoOut deleteStudent (@PathVariable Long id) {
         return studentService.deleteStudent(id);
     }
 }
