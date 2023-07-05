@@ -1,8 +1,10 @@
 package ru.hogwarts.school.Controller;
 
+import jakarta.websocket.server.PathParam;
 import org.springframework.web.bind.annotation.*;
 import ru.hogwarts.school.Dto.FacultyDtoOut;
 import ru.hogwarts.school.Dto.FacultyDtoIn;
+import ru.hogwarts.school.Dto.StudentDoOut;
 import ru.hogwarts.school.Service.FacultyService;
 
 import java.util.List;
@@ -44,5 +46,15 @@ public class FacultyController {
     @DeleteMapping("{id}")
     public FacultyDtoOut deleteFaculty (@PathVariable Long id) {
         return facultyService.deleteFaculty(id);
+    }
+
+    @GetMapping("/filter")
+    public List<FacultyDtoOut> findByColorBetween (@RequestParam String colorOrName) {
+        return facultyService.findColorBetween(colorOrName);
+    }
+
+    @GetMapping("/{id}/student")
+    public List<StudentDoOut> findStudent(@PathVariable ("id") long id) {
+        return facultyService.findStudents(id);
     }
 }
